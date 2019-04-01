@@ -17,7 +17,7 @@ RUN git clone https://github.com/webyrd/mediKanren.git
 # COPY semmed.csv /mediKanren/code
 RUN cp /mediKanren/code/sample_semmed.csv /mediKanren/code/semmed.csv
 WORKDIR /mediKanren/code
-RUN mkdir -p semmed
+RUN mkdir semmed
 RUN racket csv-semmed-ordered-unique-enum.rkt semmed.csv semmed
 RUN racket csv-semmed-simplify.rkt semmed.csv semmed
 RUN racket semmed-index-predicate.rkt semmed
